@@ -41,4 +41,20 @@ document.querySelector("#activate-xray").addEventListener("click", xray);
     when the corresponding buttons are clicked. You will need to use the
     `document.querySelectorAll()` method for these.
 */
+function activateAll(){
+    let activate = document.querySelectorAll(".power");
+    activate.forEach((index)=>{
+        index.classList.remove("disabled");
+        index.classList.add("enabled");
+    });
+}
+document.querySelector("#activate-all").addEventListener("click", activateAll)
 
+function deactivateAll(){
+    let deactivate = document.querySelectorAll(".power");
+    deactivate.forEach((index)=>{
+        index.classList.remove("enabled");
+        index.classList.add("disabled");
+    });
+}
+document.querySelector("#deactivate-all").addEventListener("click", deactivateAll)
